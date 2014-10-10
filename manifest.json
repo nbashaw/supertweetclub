@@ -1,0 +1,20 @@
+{
+  "name": "Super Tweet Club",
+  "short_name": "Super Tweet Club",
+  "description": "A chat room for friends, superimposed on twitter.com",
+  "version": "0.1",
+  "incognito": "split",
+  "web_accessible_resources": [ "contentscript.js" ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["*://twitter.com/*"],
+      "css": ["style.css"],
+      "js": ["jquery.js", "firebase.js", "app.js"]
+    }
+  ],
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+  "manifest_version": 2
+}

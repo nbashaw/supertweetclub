@@ -1,0 +1,13 @@
+#stc li {
+  list-style-type: none;
+  padding: 2px;
+}
+
+#stc-room {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+#stc-new-message {
+  width: 96%;
+}
