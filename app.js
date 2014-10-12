@@ -24,8 +24,8 @@ $(function(){
         newMessageRef.set({'username': username, 'text': text});
   };
 
-  // Get new messages as they're added
-  room.on('child_added', function(childSnapshot, prevChildName) {
+  // Get the previous 50 messages, then new ones as they're added
+  room.endAt().limit(50).on('child_added', function(childSnapshot, prevChildName) {
     var message = childSnapshot.val();
     $room.append('<li><a href="/'+message.username+'">'+message.username+'</a>: '+message.text+'</li>');
     $room.scrollTop($room[0].scrollHeight);
