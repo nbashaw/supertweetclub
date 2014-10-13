@@ -11,3 +11,9 @@
 #stc-new-message {
   width: 96%;
 }
+
+.stc-avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
