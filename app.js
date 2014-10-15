@@ -6,7 +6,7 @@ $(function(){
 
   // Show the sidebar
   var el = '<div id="stc" class="module roaming-module"><div class="flex-module">';
-  el += '<h3>Super Tweet Club <small id="stc-online-label"><span id="stc-online-count">0</span> Online<div id="stc-online-list"></div></small></h3><hr>';
+  el += '<h3 id="stc-h3">SuperTweetClub <small> &middot; <a href="https://github.com/nbashaw/supertweetclub/blob/master/README.md" target="_blank">About</a> &middot; </small><small id="stc-online-label"><span id="stc-online-count">0</span> Online<div id="stc-online-list"></div></small></h3><hr>';
   el += '<div id="stc-room"><table id="stc-chat-list"></table></div><input id="stc-new-message" type="text" placeholder="Text goes here"></div></div>';
   $('.dashboard-right').prepend(el);
   var $room = $('#stc-room');

@@ -1,3 +1,7 @@
+#stc-h3 {
+  font-size: 18px;
+}
+
 #stc-room {
   height: 300px;
   overflow-y: scroll;
