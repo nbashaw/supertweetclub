@@ -37,7 +37,7 @@ $(function(){
   // Get the previous 50 messages, then new ones as they're added
   room.endAt().limit(50).on('child_added', function(childSnapshot, prevChildName) {
     var message = childSnapshot.val();
-    $chatList.append('<tr><td width="30"><a target="_blank" href="/'+message.username+'"><img alt="'+message.username+'" class="stc-avatar" src="'+message.avatar+'"></a></td><td>'+message.text+'</td></tr>');
+    $chatList.append('<tr><td width="30"><a target="_blank" href="http://twitter.com/'+message.username+'"><img alt="'+message.username+'" class="stc-avatar" src="'+message.avatar+'"></a></td><td>'+message.text+'</td></tr>');
     $room.scrollTop($room[0].scrollHeight);
   });
 
