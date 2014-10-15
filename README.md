@@ -11,8 +11,8 @@ We built it into Twitter because, even though chatting is fun, it's really hard 
 ## How to Join
 
 1. Download the [latest version](https://github.com/nbashaw/supertweetclub/archive/master.zip) of Super Tweet Club.
-2. Open [chrome://extensions/](chrome://extensions/)
-3. Click "Load unpacked extension..." and select the Super Tweet Club folder.
+2. Open [chrome://extensions/](chrome://extensions/).
+3. Click "Load unpacked extension..." and select the Super Tweet Club folder (make sure "Developer mode" in the top-right corner is checked).
 4. Go to [http://twitter.com](http://twitter.com) and join in the fun!
 
 ## How To Leave
