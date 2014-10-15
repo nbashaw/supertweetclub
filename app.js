@@ -1,7 +1,7 @@
 $(function(){
 
   // Set up Firebase
-  var fb = new Firebase("https://super-tweet-test.firebaseio.com/");
+  var fb = new Firebase("https://super-tweet-club.firebaseio.com/");
   var room = fb.child('room');
 
   // Show the sidebar
