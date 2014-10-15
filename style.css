@@ -2,9 +2,18 @@
   font-size: 18px;
 }
 
+#stc-qotd {
+  text-align: center;
+  padding-top: 10px;
+  font-weight: normal;
+  color: #66757F;
+}
+
 #stc-room {
   height: 300px;
+  width: 258px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #stc-online-list {
@@ -31,8 +40,16 @@
   cursor: default;
 }
 
-#stc-new-message {
-  width: 96%;
+#stc-room .stc-message-text {
+  padding: 3px;
+  max-width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.stc-message {
+  border-top: 5px solid #fff;
 }
 
 .stc-avatar {
@@ -46,6 +63,6 @@
   border-radius: 5px;
 }
 
-.stc-message {
-  border-top: 5px solid #fff;
+#stc-new-message {
+  width: 96%;
 }
