@@ -1,17 +1,17 @@
 $(function(){
 
   // Set up Firebase
-  var fb = new Firebase("https://super-tweet-club.firebaseio.com/");
+  var fb = new Firebase("https://super-tweet-test.firebaseio.com/");
   var room = fb.child('room');
 
   // Show the sidebar
   var el = '<div id="stc" class="module roaming-module"><div class="flex-module">';
-  el += '<h3>Super Tweet Club <small><span id="stc-online-count">0</span> Online</small></h3><hr>';
+  el += '<h3>Super Tweet Club <small id="stc-online-label"><span id="stc-online-count">0</span> Online<div id="stc-online-list"></div></small></h3><hr>';
   el += '<div id="stc-room"><table id="stc-chat-list"></table></div><input id="stc-new-message" type="text" placeholder="Text goes here"></div></div>';
   $('.dashboard-right').prepend(el);
   var $room = $('#stc-room');
   var $chatList = $('#stc-chat-list');
-  var username = $('.DashboardProfileCard-avatarLink').attr('href');
+  var username = $('.DashboardProfileCard-avatarLink').attr('href').replace('/', '');
   var avatarUrl = $('.DashboardProfileCard-avatarImage').attr('src');
   var homeActive = $('#global-nav-home').hasClass('active');
 
@@ -19,10 +19,14 @@ $(function(){
   $('#stc-new-message').on('keyup', function(e){
     if (e.keyCode === 13) {
       var msgValue = $(this).val();
-      sendMessage(msgValue);
+      sendMessage(encodeHTML(msgValue));
       $(this).val('');
     }
   });
+
+  function encodeHTML(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  }
 
   // Send a message
   var sendMessage = function(text) {
@@ -37,7 +41,7 @@ $(function(){
   // Get the previous 50 messages, then new ones as they're added
   room.endAt().limit(50).on('child_added', function(childSnapshot, prevChildName) {
     var message = childSnapshot.val();
-    $chatList.append('<tr><td width="30"><a target="_blank" href="http://twitter.com/'+message.username+'"><img alt="'+message.username+'" class="stc-avatar" src="'+message.avatar+'"></a></td><td>'+message.text+'</td></tr>');
+    $chatList.append('<tr class="stc-message"><td class="stc-avatar"><a target="_blank" href="http://twitter.com/'+message.username+'"><img alt="'+message.username+'" class="stc-avatar-img" src="'+message.avatar+'"></a></td><td>'+message.text+'</td></tr>');
     $room.scrollTop($room[0].scrollHeight);
   });
 
@@ -55,8 +59,13 @@ $(function(){
 
   // Show list of who's online
   $onlineCountEl = $('#stc-online-count');
+  $onlineListEl = $('#stc-online-list');
   fb.child('presence').on('value', function(snapshot){
     $onlineCountEl.text(snapshot.numChildren());
+    $onlineListEl.html('');
+    snapshot.forEach(function(childSnapshot){
+      $onlineListEl.append('<li>' + childSnapshot.name() + '</li>');
+    });
   });
 
 

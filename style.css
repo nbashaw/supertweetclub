@@ -1,11 +1,30 @@
-#stc li {
-  list-style-type: none;
-  padding: 2px;
-}
-
 #stc-room {
   height: 300px;
   overflow-y: scroll;
+}
+
+#stc-online-list {
+  display: none;
+  position: absolute;
+  background: #2A2F32;
+  color: #eee;
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#stc-online-list li {
+  padding: 3px 6px;
+  list-style-type: none;
+}
+
+#stc-online-label {
+  position: relative;
+}
+
+#stc-online-label:hover #stc-online-list {
+  display: block;
+  cursor: default;
 }
 
 #stc-new-message {
@@ -13,7 +32,16 @@
 }
 
 .stc-avatar {
+  width: 30px;
+  vertical-align: top;
+}
+
+.stc-avatar-img {
   width: 25px;
   height: 25px;
   border-radius: 5px;
+}
+
+.stc-message {
+  border-top: 5px solid #fff;
 }
