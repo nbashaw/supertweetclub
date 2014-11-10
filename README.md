@@ -1,6 +1,6 @@
 # Super Tweet Club
 
-A chrome extension that puts a backchannel chat room in your twitter. It looks like [this](http://cl.ly/Y2lv/Image%202014-10-15%20at%201.27.21%20PM.png).
+A chrome extension that puts a backchannel chat room in your twitter. It looks like [this](http://cl.ly/Y2lv/Image%202014-10-15%20at%201.27.21%20PM.png). If your browser is narrow it might also show up like [this](http://cl.ly/image/1R0H2K3u1N2D).
 
 ## Why Join
 
@@ -12,7 +12,7 @@ We built it into Twitter because, even though chatting is fun, it's really hard 
 
 1. Download the [latest version](https://github.com/nbashaw/supertweetclub/archive/master.zip) of Super Tweet Club.
 2. Open [chrome://extensions/](chrome://extensions/).
-3. Click "Load unpacked extension..." and select the Super Tweet Club folder (make sure "Developer mode" in the top-right corner is checked).
+3. Click "Load unpacked extension..." and select the Super Tweet Club folder (make sure "Developer mode" in the top-right corner is checked). If you're using Windows, you'll need to unzip the folder first, and it might take a little while to populate in the list.
 4. Go to [http://twitter.com](http://twitter.com) and join in the fun!
 
 ## How To Leave
